@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "accessWidener": "serverswitcher.accesswidener",
+  "id": "serverswitcher",
+  "version": "${version}",
+  "icon": "icon.png",
+  "name": "Server Switcher",
+  "description": "Switch between servers and reconnect instantly from your Pause menu without returning to the Main Menu",
+  "authors": ["nattapat2871 (https://nattapat2871.me)", "Pro_gem4041 (original mod)"],
+  "contact": {
+    "homepage": "https://github.com/Nattapat2871/server-switcher",
+    "sources": "https://github.com/Nattapat2871/server-switcher",
+    "issues": "https://github.com/Nattapat2871/server-switcher/issues"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.github_releases": "https://github.com/Nattapat2871/server-switcher/releases"
+      }
+    }
+  },
+  "entrypoints": {
+    "client": ["com.serverswitcher.ServerSwitcherClient"],
+    "modmenu": ["com.serverswitcher.integration.ModMenuIntegration"]
+  },
+  "mixins": ["serverswitcher.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "26.2",
+    "java": ">=25",
+    "fabric-api": "*",
+    "cloth-config": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}
