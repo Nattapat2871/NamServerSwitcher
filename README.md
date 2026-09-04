@@ -5,6 +5,10 @@ Maintained by **nattapat2871 (https://nattapat2871.me)**.
 
 [Download the latest release](https://github.com/Nattapat2871/server-switcher/releases/latest)
 
+<img width="579" height="410" alt="image" src="https://github.com/user-attachments/assets/b38bed4e-1bd3-4536-8805-d8ddd2c9d056" />
+<img width="428" height="105" alt="image" src="https://github.com/user-attachments/assets/94b13841-4557-4650-b16f-7dc55274268f" />
+
+
 ## Install
 
 Requires Minecraft **26.2**, Java **25**, Fabric Loader **0.19.3 or newer**,
