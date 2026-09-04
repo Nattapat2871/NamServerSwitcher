@@ -4,6 +4,7 @@ A client-side Fabric mod for switching between saved servers from the pause menu
 Maintained by **nattapat2871 (https://nattapat2871.me)**.
 
 [Download the latest release](https://github.com/Nattapat2871/server-switcher/releases/latest)
+| [Modrinth: NamServerSwitcher](https://modrinth.com/mod/namserverswitcher)
 
 Fabric builds for Minecraft **1.21.1 through 26.2**, with one jar per game version.
 

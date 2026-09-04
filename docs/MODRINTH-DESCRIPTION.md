@@ -1,4 +1,4 @@
-# Server Switcher
+# NamServerSwitcher
 
 Switch between your saved Minecraft servers directly from the pause menu.
 Quick Join keeps your existing multiplayer server list available without returning

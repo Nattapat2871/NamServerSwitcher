@@ -2,14 +2,15 @@
 
 Author: nattapat2871 (https://nattapat2871.me)
 
-Project settings: https://modrinth.com/project/nattapat-server-switcher/settings
+Project: https://modrinth.com/mod/namserverswitcher
+Project settings: https://modrinth.com/mod/namserverswitcher/settings
 Publication requires Modrinth moderation; a prepared draft is not an approval.
 
 ## Project Details
 
 - Type: Mod
-- Name: Server Switcher
-- Suggested slug: nattapat-server-switcher
+- Name: NamServerSwitcher
+- Slug: namserverswitcher
 - Summary: Switch saved servers from the pause menu with mouse-wheel scrolling, a draggable scrollbar, and immediate disconnect before joining.
 - Categories: Utility, Management
 - Loader: Fabric
