@@ -5,10 +5,11 @@ package com.serverswitcher.screen;
 import com.serverswitcher.config.ModConfigScreen;
 import com.serverswitcher.config.ModSettings;
 import com.serverswitcher.network.ServerConnectionHelper;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import com.serverswitcher.compat.ClientCompat;
+import com.serverswitcher.compat.RenderingScreen;
+import com.serverswitcher.compat.UiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.network.chat.Component;
@@ -17,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServerSwitchScreen extends Screen {
+public class ServerSwitchScreen extends RenderingScreen {
 
     private static final int SCROLLBAR_WIDTH = 8;
 
@@ -74,7 +75,7 @@ public class ServerSwitchScreen extends Screen {
         reconnectButton = Button.builder(Component.translatable("serverswitcher.button.reconnect"), b -> {
             if (!ServerConnectionHelper.reconnectToCurrent(this.minecraft, parent != null ? parent : this)
                     && this.minecraft.player != null) {
-                this.minecraft.player.sendSystemMessage(Component.translatable("serverswitcher.message.no_current_server"));
+                ClientCompat.showMessage(this.minecraft, Component.translatable("serverswitcher.message.no_current_server"));
             }
         }).bounds(bx, by, bw, 20).build();
 
@@ -87,7 +88,7 @@ public class ServerSwitchScreen extends Screen {
         }).bounds(bx + bw + 4, by, bw, 20).build();
 
         Button settingsButton = Button.builder(Component.translatable("serverswitcher.button.settings"), b ->
-                this.minecraft.gui.setScreen(ModConfigScreen.create(this))
+                ClientCompat.setScreen(this.minecraft, ModConfigScreen.create(this))
         ).bounds(bx + (bw + 4) * 2, by, bw, 20).build();
 
         this.addRenderableWidget(reconnectButton);
@@ -169,16 +170,11 @@ public class ServerSwitchScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.gui.setScreen(parent);
+        ClientCompat.setScreen(this.minecraft, parent);
     }
 
     @Override
-    protected void extractBlurredBackground(GuiGraphicsExtractor graphics) {
-    }
-
-    @Override
-    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
-        this.extractBackground(graphics, mouseX, mouseY, delta);
+    protected void drawContent(UiGraphics graphics, int mouseX, int mouseY, float delta) {
         graphics.fill(panelLeft, panelTop, panelRight, panelBottom, 0xC0101010);
         graphics.outline(panelLeft, panelTop, panelRight - panelLeft, panelBottom - panelTop, 0xFF404040);
         graphics.centeredText(this.font, this.title, this.width / 2, panelTop + 10, 0xFFFFFFFF);
@@ -224,8 +220,6 @@ public class ServerSwitchScreen extends Screen {
             }
         }
 
-        super.extractRenderState(graphics, mouseX, mouseY, delta);
-
         if (servers.isEmpty()) {
             graphics.centeredText(
                     this.font,
@@ -238,13 +232,13 @@ public class ServerSwitchScreen extends Screen {
     }
 
     @Override
-    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
-        if (event.button() == 0 && isOverScrollbar(event.x(), event.y())) {
+    protected boolean onMouseDown(double mouseX, double mouseY, int button) {
+        if (button == 0 && isOverScrollbar(mouseX, mouseY)) {
             resetDoubleClick();
-            return scroll.beginDrag(event.y());
+            return scroll.beginDrag(mouseY);
         }
-        if (event.button() == 0 && isOverList(event.x(), event.y())) {
-            int idx = rowIndexAt(event.y());
+        if (button == 0 && isOverList(mouseX, mouseY)) {
+            int idx = rowIndexAt(mouseY);
             if (idx >= 0 && idx < servers.size()) {
                 long now = System.currentTimeMillis();
                 if (idx == lastClickedIndex && now - lastClickTime < 350) {
@@ -260,11 +254,7 @@ public class ServerSwitchScreen extends Screen {
                 return true;
             }
         }
-        boolean handled = super.mouseClicked(event, doubleClick);
-        if (handled) {
-            connectButton.active = getSelectedServer() != null;
-        }
-        return handled;
+        return false;
     }
 
     @Override
@@ -279,19 +269,16 @@ public class ServerSwitchScreen extends Screen {
     }
 
     @Override
-    public boolean mouseDragged(MouseButtonEvent event, double deltaX, double deltaY) {
-        if (event.button() == 0 && scroll.drag(event.y())) {
-            return true;
-        }
-        return super.mouseDragged(event, deltaX, deltaY);
+    protected boolean onMouseDrag(double mouseX, double mouseY, int button) {
+        return button == 0 && scroll.drag(mouseY);
     }
 
     @Override
-    public boolean mouseReleased(MouseButtonEvent event) {
-        if (event.button() == 0 && scroll.dragging()) {
+    protected boolean onMouseUp(double mouseX, double mouseY, int button) {
+        if (button == 0 && scroll.dragging()) {
             scroll.endDrag();
             return true;
         }
-        return super.mouseReleased(event);
+        return false;
     }
 }

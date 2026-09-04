@@ -20,5 +20,6 @@
   "serverswitcher.config.show_pause_button.tooltip": "When off, use the keybinding or open Settings from the quick-join screen.",
   "serverswitcher.config.keys.hint": "Assign \"Open server switcher\" in Minecraft controls (unbound by default).",
   "key.serverswitcher.open": "Open server switcher",
-  "category.serverswitcher": "Server Switcher"
+  "category.serverswitcher": "Server Switcher",
+  "key.category.serverswitcher.category": "Server Switcher"
 }

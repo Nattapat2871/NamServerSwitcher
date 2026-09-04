@@ -3,7 +3,7 @@
   "accessWidener": "serverswitcher.accesswidener",
   "id": "serverswitcher",
   "version": "${version}",
-  "icon": "icon.png",
+  "icon": "server-switcher.png",
   "name": "Server Switcher",
   "description": "Switch between servers and reconnect instantly from your Pause menu without returning to the Main Menu",
   "authors": ["nattapat2871 (https://nattapat2871.me)", "Pro_gem4041 (original mod)"],
@@ -27,9 +27,9 @@
   },
   "mixins": ["serverswitcher.mixins.json"],
   "depends": {
-    "fabricloader": ">=0.19.3",
-    "minecraft": "26.2",
-    "java": ">=25",
+    "fabricloader": ">=${loader}",
+    "minecraft": "${minecraft}",
+    "java": ">=${java}",
     "fabric-api": "*",
     "cloth-config": "*"
   },

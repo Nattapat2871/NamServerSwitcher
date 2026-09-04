@@ -1,6 +1,7 @@
 package com.serverswitcher.mixin;
 
 import com.serverswitcher.config.ModSettings;
+import com.serverswitcher.compat.ClientCompat;
 import com.serverswitcher.screen.ServerSwitchScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
@@ -38,7 +39,7 @@ public abstract class GameMenuScreenMixin {
                     Component.translatable("serverswitcher.button.switch_server"),
                     b -> {
                         if (client.level != null) {
-                            client.gui.setScreen(new ServerSwitchScreen(self));
+                            ClientCompat.setScreen(client, new ServerSwitchScreen(self));
                         }
                     }
             ).bounds(bx + half + 2, by, half, 20).build());

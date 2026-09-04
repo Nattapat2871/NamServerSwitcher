@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.0 - Minecraft 1.21.1 through 26.2
+
+- Added 15 exact-version Fabric build targets, each with its own distributable jar.
+- Isolated input, rendering, key mapping, and screen APIs behind compatibility adapters.
+- Used intermediary access wideners for 1.21.x and official names for 26.x.
+- Retained immediate old-server disconnect, wheel scrolling, and draggable scrollbars.
+- Added a generated in-mod icon, maintainer screenshots, and publishing documentation.
+- Added a full CI matrix and release artifact verification.
+
+Validation: per-target Gradle builds and scroll-model unit tests. Live multiplayer
+and GUI behavior have not been manually tested for every target.
+
 ## 1.0.2 - Minecraft 26.2
 
 - Added draggable scrollbar thumbs and click-to-position scrollbar tracks.
