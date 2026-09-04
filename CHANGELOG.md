@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.1 - NamServerSwitcher branding
+
+- Renamed the project, distributable jars, and in-game display name to NamServerSwitcher.
+- Updated repository, issue tracker, release, Modrinth, and documentation links.
+- Kept the `serverswitcher` mod ID, configuration path, translations, and package
+  namespace compatible with existing installations.
+
+Validation: all 15 exact-version builds and scroll-model unit tests. Live multiplayer
+and GUI behavior have not been manually tested for every target.
+
 ## 1.1.0 - Minecraft 1.21.1 through 26.2
 
 - Added 15 exact-version Fabric build targets, each with its own distributable jar.

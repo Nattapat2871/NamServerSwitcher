@@ -3,21 +3,21 @@
   "accessWidener": "serverswitcher.accesswidener",
   "id": "serverswitcher",
   "version": "${version}",
-  "icon": "server-switcher.png",
-  "name": "Server Switcher",
-  "description": "Switch between servers and reconnect instantly from your Pause menu without returning to the Main Menu",
+  "icon": "namserverswitcher.png",
+  "name": "NamServerSwitcher",
+  "description": "Switch saved servers from the pause menu with scrolling, a draggable scrollbar, and immediate disconnect before joining.",
   "authors": ["nattapat2871 (https://nattapat2871.me)", "Pro_gem4041 (original mod)"],
   "contact": {
-    "homepage": "https://github.com/Nattapat2871/server-switcher",
-    "sources": "https://github.com/Nattapat2871/server-switcher",
-    "issues": "https://github.com/Nattapat2871/server-switcher/issues"
+    "homepage": "https://modrinth.com/mod/namserverswitcher",
+    "sources": "https://github.com/Nattapat2871/NamServerSwitcher",
+    "issues": "https://github.com/Nattapat2871/NamServerSwitcher/issues"
   },
   "license": "MIT",
   "environment": "client",
   "custom": {
     "modmenu": {
       "links": {
-        "modmenu.github_releases": "https://github.com/Nattapat2871/server-switcher/releases"
+        "modmenu.github_releases": "https://github.com/Nattapat2871/NamServerSwitcher/releases"
       }
     }
   },

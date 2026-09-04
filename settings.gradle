@@ -7,4 +7,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "server-switcher"
+rootProject.name = "NamServerSwitcher"

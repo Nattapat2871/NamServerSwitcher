@@ -15,7 +15,7 @@ function Read-ZipText($zip, $name) {
 $manifest = foreach ($mc in @($targets.Keys | Sort-Object { [version]$_ })) {
     $result = @($results | Where-Object minecraft -eq $mc)
     if ($result.Count -ne 1 -or $result[0].exitCode -ne 0) { throw "No successful current build: $mc" }
-    $filename = "serverswitcher-$mc-$modVersion.jar"
+    $filename = "namserverswitcher-$mc-$modVersion.jar"
     $path = Join-Path $root "dist/$filename"
     $zip = [IO.Compression.ZipFile]::OpenRead($path)
     try {
@@ -69,6 +69,6 @@ Copy-Item (Join-Path $root 'docs/MODRINTH*.md') -Destination $bundle -Force
 Copy-Item (Join-Path $root 'docs/assets/quick-join.png'), (Join-Path $root 'docs/assets/pause-menu.png') -Destination $bundle -Force
 foreach ($entry in $manifest) { Copy-Item (Join-Path $root "dist/$($entry.file)") -Destination $bundle -Force }
 Copy-Item (Join-Path $root 'LICENSE') -Destination $bundle -Force
-Compress-Archive -Path "$bundle/*" -DestinationPath (Join-Path $root "dist/server-switcher-$modVersion-modrinth.zip") -Force
+Compress-Archive -Path "$bundle/*" -DestinationPath (Join-Path $root "dist/namserverswitcher-$modVersion-modrinth.zip") -Force
 $manifest | ForEach-Object { [pscustomobject]@{ Minecraft = $_.minecraft; Tests = $_.unit_tests; Namespace = $_.namespace; File = $_.file } } | Format-Table
 Write-Host "Verified $($manifest.Count) artifacts; multiplayer gameplay is not tested."

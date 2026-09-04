@@ -27,6 +27,6 @@ jobs:
         run: ./gradlew collectRelease '-Pmc=${{ matrix.minecraft }}' --console=plain --stacktrace
       - uses: actions/upload-artifact@v4
         with:
-          name: server-switcher-${{ matrix.minecraft }}
+          name: namserverswitcher-${{ matrix.minecraft }}
           path: dist/*.jar
           if-no-files-found: error

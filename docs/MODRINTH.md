@@ -17,15 +17,15 @@ Publication requires Modrinth moderation; a prepared draft is not an approval.
 - Client side: Required
 - Server side: Unsupported
 - License: MIT
-- Source: https://github.com/Nattapat2871/server-switcher
-- Issues: https://github.com/Nattapat2871/server-switcher/issues
+- Source: https://github.com/Nattapat2871/NamServerSwitcher
+- Issues: https://github.com/Nattapat2871/NamServerSwitcher/issues
 - Gallery: `assets/quick-join.png` and `assets/pause-menu.png` (maintainer screenshots)
 - Icon: leave unset until a non-AI image is supplied. Do not upload the generated icon.
 - Description: `MODRINTH-DESCRIPTION.md`
 
 ## Uploading Versions
 
-Use the normal `serverswitcher-<minecraft>-1.1.0.jar`, not a sources or dev jar.
+Use the normal `namserverswitcher-<minecraft>-1.1.1.jar`, not a sources or dev jar.
 Create one version entry per Minecraft target and select **only that exact game
 version**. Each jar is compiled and remapped for its own target; do not mark one
 jar as supporting the whole range.

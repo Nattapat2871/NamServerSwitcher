@@ -16,8 +16,8 @@ to the main menu.
 ## Installation
 
 Choose the file for your exact Minecraft version, install Fabric Loader, Fabric API,
-and Cloth Config for that version, then place the Server Switcher jar in `mods`.
-Mod Menu is optional. Remove older Server Switcher jars before updating.
+and Cloth Config for that version, then place the NamServerSwitcher jar in `mods`.
+Mod Menu is optional. Remove older Server Switcher or NamServerSwitcher jars before updating.
 
 Minecraft 1.21.1 through 1.21.11 use Java 21. Minecraft 26.1, 26.1.1, 26.1.2,
 and 26.2 use Java 25. The release provides a separate build for each target.
@@ -35,5 +35,5 @@ Based on [Progem4041's Server Switcher](https://github.com/Progem4041/ServersSwi
 with multiversion builds and scrolling/connection fixes. Free and open source under
 the MIT License; upstream copyright and attribution are retained.
 
-[Source code](https://github.com/Nattapat2871/server-switcher) |
-[Report an issue](https://github.com/Nattapat2871/server-switcher/issues)
+[Source code](https://github.com/Nattapat2871/NamServerSwitcher) |
+[Report an issue](https://github.com/Nattapat2871/NamServerSwitcher/issues)

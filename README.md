@@ -1,9 +1,9 @@
-# Server Switcher
+# NamServerSwitcher
 
 A client-side Fabric mod for switching between saved servers from the pause menu.
 Maintained by **nattapat2871 (https://nattapat2871.me)**.
 
-[Download the latest release](https://github.com/Nattapat2871/server-switcher/releases/latest)
+[Download the latest release](https://github.com/Nattapat2871/NamServerSwitcher/releases/latest)
 | [Modrinth: NamServerSwitcher](https://modrinth.com/mod/namserverswitcher)
 
 Fabric builds for Minecraft **1.21.1 through 26.2**, with one jar per game version.
@@ -21,9 +21,10 @@ Mod Menu is optional. Meteor Client is not required.
 Supported targets: 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.21.7,
 1.21.8, 1.21.9, 1.21.10, 1.21.11, 26.1, 26.1.1, 26.1.2, and 26.2.
 
-Place `serverswitcher-<minecraft>-1.1.0.jar` in your instance's `mods` directory.
+Place `namserverswitcher-<minecraft>-1.1.1.jar` in your instance's `mods` directory.
 Choose the exact game version; a single jar does not support the entire range.
-Remove older Server Switcher jars from that directory first. Restart Minecraft.
+Remove older `serverswitcher-*` or `namserverswitcher-*` jars from that directory
+first. Restart Minecraft.
 
 ## Use
 
