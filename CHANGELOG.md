@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.2 - Minecraft 26.3
+
+- Added an exact Minecraft 26.3 Fabric build target.
+- Added a dedicated 26.3 client compatibility adapter for the renamed keyboard input API.
+- Updated the 26.3 dependency set to Fabric Loader 0.19.5, Fabric API 0.161.0+26.3, Cloth Config 26.3.159, and Mod Menu 21.0.0.
+- Kept existing 1.21.x through 26.2 build targets unchanged.
+
+Validation: Gradle build for 26.3 completed successfully. In-game loading requires restarting the target instance after replacing the JAR.
+
 ## 1.1.1 - NamServerSwitcher branding
 
 - Renamed the project, distributable jars, and in-game display name to NamServerSwitcher.
