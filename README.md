@@ -21,7 +21,7 @@ Mod Menu is optional. Meteor Client is not required.
 Supported targets: 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.21.7,
 1.21.8, 1.21.9, 1.21.10, 1.21.11, 26.1, 26.1.1, 26.1.2, 26.2, and 26.3.
 
-Place `namserverswitcher-<minecraft>-1.1.3.jar` in your instance's `mods` directory.
+Place `namserverswitcher-<minecraft>-1.1.4.jar` in your instance's `mods` directory.
 Choose the exact game version; a single jar does not support the entire range.
 Remove older `serverswitcher-*` or `namserverswitcher-*` jars from that directory
 first. Restart Minecraft.

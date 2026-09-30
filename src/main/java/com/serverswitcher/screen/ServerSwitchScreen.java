@@ -2,6 +2,7 @@
 // Author: nattapat2871 (https://nattapat2871.me)
 package com.serverswitcher.screen;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import com.serverswitcher.config.ModConfigScreen;
 import com.serverswitcher.config.ModSettings;
 import com.serverswitcher.network.ServerConnectionHelper;
@@ -233,11 +234,11 @@ public class ServerSwitchScreen extends RenderingScreen {
 
     @Override
     protected boolean onMouseDown(double mouseX, double mouseY, int button) {
-        if (button == 0 && isOverScrollbar(mouseX, mouseY)) {
+        if (button == InputConstants.MOUSE_BUTTON_LEFT && isOverScrollbar(mouseX, mouseY)) {
             resetDoubleClick();
             return scroll.beginDrag(mouseY);
         }
-        if (button == 0 && isOverList(mouseX, mouseY)) {
+        if (button == InputConstants.MOUSE_BUTTON_LEFT && isOverList(mouseX, mouseY)) {
             int idx = rowIndexAt(mouseY);
             if (idx >= 0 && idx < servers.size()) {
                 long now = System.currentTimeMillis();
@@ -270,12 +271,12 @@ public class ServerSwitchScreen extends RenderingScreen {
 
     @Override
     protected boolean onMouseDrag(double mouseX, double mouseY, int button) {
-        return button == 0 && scroll.drag(mouseY);
+        return button == InputConstants.MOUSE_BUTTON_LEFT && scroll.drag(mouseY);
     }
 
     @Override
     protected boolean onMouseUp(double mouseX, double mouseY, int button) {
-        if (button == 0 && scroll.dragging()) {
+        if (button == InputConstants.MOUSE_BUTTON_LEFT && scroll.dragging()) {
             scroll.endDrag();
             return true;
         }

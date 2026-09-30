@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.4 - Minecraft 26.3 mouse-input fix
+
+- Fixed server-row selection, Connect/Quick Join interaction, scrollbar dragging, and mouse release handling on Minecraft 26.3.
+- Replaced the legacy hardcoded left mouse button value `0` with `InputConstants.MOUSE_BUTTON_LEFT`.
+- Minecraft 26.2 resolves this constant to `0`, while Minecraft 26.3 resolves it to `1`, matching the new SDL input backend.
+- Updated the 26.3 `InputScreen` adapter to use the same version-correct left-button constant when synchronizing Screen dragging state.
+
 ## 1.1.3 - Minecraft 26.3 quick-join fixes
 
 - Fixed Quick Join on Minecraft 26.3 by following the vanilla ConnectScreen.startConnecting flow instead of disconnecting the current connection twice.

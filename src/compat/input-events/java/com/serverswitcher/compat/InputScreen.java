@@ -2,6 +2,7 @@
 // Author: nattapat2871 (https://nattapat2871.me)
 package com.serverswitcher.compat;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.input.MouseButtonEvent;
@@ -15,7 +16,7 @@ public abstract class InputScreen extends Screen {
     @Override
     public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
         if (onMouseDown(event.x(), event.y(), event.button())) {
-            if (event.button() == 0) {
+            if (event.button() == InputConstants.MOUSE_BUTTON_LEFT) {
                 setDragging(true);
             }
             return true;
@@ -26,7 +27,7 @@ public abstract class InputScreen extends Screen {
     @Override
     public boolean mouseReleased(MouseButtonEvent event) {
         boolean handled = onMouseUp(event.x(), event.y(), event.button());
-        if (event.button() == 0) {
+        if (event.button() == InputConstants.MOUSE_BUTTON_LEFT) {
             setDragging(false);
         }
         return handled || super.mouseReleased(event);
