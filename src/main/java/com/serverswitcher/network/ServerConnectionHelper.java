@@ -11,7 +11,6 @@ import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.multiplayer.resolver.ServerAddress;
-import net.minecraft.network.chat.Component;
 
 public final class ServerConnectionHelper {
 
@@ -31,15 +30,10 @@ public final class ServerConnectionHelper {
         ServerAddress address = ServerAddress.parseString(next.ip);
         Screen safeReturn = sanitizeReturnScreen(returnScreen);
 
-        var previous = client.getConnection();
-        if (previous != null) {
-            // Minecraft.disconnect tears down client state, but does not close the socket.
-            // Close it first so the old server sees us leave without waiting for a timeout.
-            previous.getConnection().disconnect(Component.translatable("disconnect.quitting"));
-        }
-        if (client.level != null || previous != null) {
-            client.disconnect(safeReturn, false);
-        }
+        // Minecraft 26.3 ConnectScreen.startConnecting() performs the world disconnect,
+        // multiplayer preparation, report-environment update and screen transition itself.
+        // Disconnecting manually first races that vanilla flow and can leave the quick-join
+        // screen unable to start the new connection.
         ConnectScreen.startConnecting(safeReturn, client, address, next, false, null);
     }
 

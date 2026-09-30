@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.3 - Minecraft 26.3 quick-join fixes
+
+- Fixed Quick Join on Minecraft 26.3 by following the vanilla ConnectScreen.startConnecting flow instead of disconnecting the current connection twice.
+- Synced custom list/scrollbar mouse handling with Minecraft 26.3 Screen dragging state.
+- Increased the scrollbar hit area and kept mouse-wheel scrolling across the Quick Join panel.
+- Retained saved-server loading, row selection, double-click join, Connect, Reconnect, and Settings behavior.
+
+Validation: Minecraft 26.3 Gradle build and the ServerListScroll unit-test suite completed successfully.
+
 ## 1.1.2 - Minecraft 26.3
 
 - Added an exact Minecraft 26.3 Fabric build target.

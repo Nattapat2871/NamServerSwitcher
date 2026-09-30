@@ -20,7 +20,7 @@ import java.util.List;
 
 public class ServerSwitchScreen extends RenderingScreen {
 
-    private static final int SCROLLBAR_WIDTH = 8;
+    private static final int SCROLLBAR_WIDTH = 10;
 
     private final Screen parent;
     private final List<ServerData> servers = new ArrayList<>();
@@ -147,8 +147,8 @@ public class ServerSwitchScreen extends RenderingScreen {
     }
 
     private boolean isOverScrollbar(double mouseX, double mouseY) {
-        return scroll.maximum() > 0 && mouseX >= scrollbarLeft() - 1 && mouseX < listRight
-                && mouseY >= listTop && mouseY < listBottom;
+        return scroll.maximum() > 0 && mouseX >= scrollbarLeft() - 3 && mouseX < listRight
+                && mouseY >= listTop + 1 && mouseY < listBottom - 1;
     }
 
     private void resetDoubleClick() {

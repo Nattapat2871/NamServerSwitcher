@@ -21,7 +21,7 @@ Mod Menu is optional. Meteor Client is not required.
 Supported targets: 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.21.7,
 1.21.8, 1.21.9, 1.21.10, 1.21.11, 26.1, 26.1.1, 26.1.2, 26.2, and 26.3.
 
-Place `namserverswitcher-<minecraft>-1.1.2.jar` in your instance's `mods` directory.
+Place `namserverswitcher-<minecraft>-1.1.3.jar` in your instance's `mods` directory.
 Choose the exact game version; a single jar does not support the entire range.
 Remove older `serverswitcher-*` or `namserverswitcher-*` jars from that directory
 first. Restart Minecraft.
@@ -37,9 +37,9 @@ first. Restart Minecraft.
 - **Reconnect** reconnects to the current server.
 - An optional key binding is available in Minecraft's Controls menu.
 
-The old network connection is closed before client-world cleanup and the new
-connection attempt. This avoids leaving the previous connection open until the
-old server times it out. Joining still depends on the target server's response,
+On Minecraft 26.3, Quick Join delegates disconnect and connection setup to the
+vanilla ConnectScreen flow so world cleanup, multiplayer preparation, and the
+new connection occur in the same order as Minecraft's normal server list. Joining still depends on the target server's response,
 authentication, resource packs, and any server-side reconnect cooldown.
 
 Panel dimensions and row height can be changed under **Settings**.

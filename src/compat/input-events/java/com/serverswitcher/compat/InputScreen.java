@@ -14,16 +14,29 @@ public abstract class InputScreen extends Screen {
 
     @Override
     public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
-        return onMouseDown(event.x(), event.y(), event.button()) || super.mouseClicked(event, doubleClick);
+        if (onMouseDown(event.x(), event.y(), event.button())) {
+            if (event.button() == 0) {
+                setDragging(true);
+            }
+            return true;
+        }
+        return super.mouseClicked(event, doubleClick);
     }
 
     @Override
     public boolean mouseReleased(MouseButtonEvent event) {
-        return onMouseUp(event.x(), event.y(), event.button()) || super.mouseReleased(event);
+        boolean handled = onMouseUp(event.x(), event.y(), event.button());
+        if (event.button() == 0) {
+            setDragging(false);
+        }
+        return handled || super.mouseReleased(event);
     }
 
     @Override
     public boolean mouseDragged(MouseButtonEvent event, double dx, double dy) {
-        return onMouseDrag(event.x(), event.y(), event.button()) || super.mouseDragged(event, dx, dy);
+        if (onMouseDrag(event.x(), event.y(), event.button())) {
+            return true;
+        }
+        return super.mouseDragged(event, dx, dy);
     }
 }

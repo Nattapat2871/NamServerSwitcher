@@ -5,7 +5,7 @@
   "version": "${version}",
   "icon": "namserverswitcher.png",
   "name": "NamServerSwitcher",
-  "description": "Switch saved servers from the pause menu with scrolling, a draggable scrollbar, and immediate disconnect before joining.",
+  "description": "Switch saved servers from the pause menu with working quick join, mouse-wheel scrolling, and a draggable scrollbar.",
   "authors": ["nattapat2871 (https://nattapat2871.me)", "Pro_gem4041 (original mod)"],
   "contact": {
     "homepage": "https://modrinth.com/mod/namserverswitcher",
